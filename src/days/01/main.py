@@ -12,10 +12,12 @@ def count_increases(readings):
 
     return totalIncreases
 
-def solve_part_1(readings):
+def solve_part_1(inputFile):
+    readings = parse_input_as_numbers_list(inputFile)
     return count_increases(readings)
 
-def solve_part_2(readings):
+def solve_part_2(inputFile):
+    readings = parse_input_as_numbers_list(inputFile)
     group_sums = []
     for index, reading in enumerate(readings):
         # break if we've seen the last complete group of 3
@@ -28,9 +30,13 @@ def solve_part_2(readings):
     total_increases = count_increases(group_sums)
     return total_increases
 
-input = parse_input_as_numbers_list('01/input.txt')
-answerPart1 = solve_part_1(input)
-answerPart2 = solve_part_2(input)
-
-print("Part 1: " + str(answerPart1))
-print("Part 2: " + str(answerPart2))
+def solve(part = 1, example = False):
+    fileName = "input.txt" if not example else "example.txt"
+    filePath = f"src/days/01/{fileName}"
+    
+    if part == 1:
+        return solve_part_1(filePath)
+    elif part == 2:
+        return solve_part_2(filePath)
+    else:
+        raise ValueError('There is no part ' + str(part))
