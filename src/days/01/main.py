@@ -1,6 +1,4 @@
-def parse_input_as_numbers_list(filename):
-    with open(filename) as f:
-        return [int(x) for x in f]
+from utility.file import read_lines_as_numbers
 
 def count_increases(readings):
     totalIncreases = 0
@@ -13,11 +11,11 @@ def count_increases(readings):
     return totalIncreases
 
 def solve_part_1(inputFile):
-    readings = parse_input_as_numbers_list(inputFile)
+    readings = read_lines_as_numbers(inputFile)
     return count_increases(readings)
 
 def solve_part_2(inputFile):
-    readings = parse_input_as_numbers_list(inputFile)
+    readings = read_lines_as_numbers(inputFile)
     group_sums = []
     for index, reading in enumerate(readings):
         # break if we've seen the last complete group of 3
