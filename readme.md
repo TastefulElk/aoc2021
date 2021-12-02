@@ -8,7 +8,7 @@ Using AoC to learn some Python! Happy for any feedback because I have no idea wh
 
 To run a specific day and part, run the root `app.py` with the day and part as arguments.
 
-For example, to run day two, part one: 
+For example, to run day two, part one:
 
 ```sh
 python src/app.py --day 2 --part 1
@@ -22,4 +22,14 @@ python src/app.py --day 2 --part 1 --example
 
 ## Testing
 
-Run a specific test by running `python -m unittest path/to/test`
+Run all tests by running:
+
+```sh
+python -m unittest
+```
+
+or run a specific test by running:
+
+```sh
+python -m unittest path/to/test
+```
