@@ -39,4 +39,4 @@ def solve(part = 1, example = False):
     elif part == 2:
         return solve_part_2(filePath)
     else:
-        raise ValueError('There is no part ' + str(part))
+        raise ValueError(f'There is no part {part}')
