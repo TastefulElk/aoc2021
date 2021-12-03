@@ -1,5 +1,6 @@
 from utility.file import read_lines
 
+
 def solve_part_1(inputFile):
     input_data = read_lines(inputFile)
     x = 0
@@ -14,6 +15,7 @@ def solve_part_1(inputFile):
         elif direction == "down":
             y += steps
     return x * y
+
 
 def solve_part_2(inputFile):
     input_data = read_lines(inputFile)
@@ -32,10 +34,11 @@ def solve_part_2(inputFile):
             aim += steps
     return x * y
 
-def solve(part = 1, example = False):
+
+def solve(part=1, example=False):
     fileName = "input.txt" if not example else "example.txt"
     filePath = f"src/days/02/{fileName}"
-    
+
     if part == 1:
         return solve_part_1(filePath)
     elif part == 2:
