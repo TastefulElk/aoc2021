@@ -19,27 +19,6 @@ def get_most_common_bit_at_pos(matrix, pos):
     return "1" if ones >= zeroes else "0"
 
 
-def solve_part_1(inputFile):
-    input_data = read_lines(inputFile)
-    bits = [0] * len(input_data[0])
-
-    for line in input_data:
-        for index, char in enumerate(line):
-            if char == "1":
-                bits[index] += 1
-
-    gamma = [0] * len(bits)
-    epsilon = [0] * len(bits)
-
-    for index, bit in enumerate(bits):
-        if bit > len(input_data) / 2:
-            gamma[index] = 1
-        else:
-            epsilon[index] = 1
-
-    return binary_array_to_decimal(gamma) * binary_array_to_decimal(epsilon)
-
-
 def filter_by(filter_func, data):
     return list(filter(filter_func, data))
 
@@ -77,6 +56,20 @@ def solve_part_2(inputFile):
     co2_rate = calculate_co2_rate(matrix.copy())
 
     return binary_array_to_decimal(oxygen_rate) * binary_array_to_decimal(co2_rate)
+
+
+def solve_part_1(inputFile):
+    input_data = read_lines(inputFile)
+    sequence_length = len(input_data[0])
+
+    gamma = []
+    epsilon = []
+    for i in range(sequence_length):
+        most_common_bit = get_most_common_bit_at_pos(input_data, i)
+        gamma.append(most_common_bit)
+        epsilon.append("0" if most_common_bit == "1" else "1")
+
+    return binary_array_to_decimal(gamma) * binary_array_to_decimal(epsilon)
 
 
 def solve(part=1, example=False):
