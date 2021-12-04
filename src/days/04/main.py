@@ -61,21 +61,32 @@ def solve_part_1(filePath):
 
     boards = get_lotto_boards(input_data)
 
+    # find first winning board
     drawn_numbers: list[int] = []
-    winning_board = None
-    while(len(lotto_numbers) > 0 and winning_board is None):
+    while(len(lotto_numbers) > 0):
         drawn_numbers.append(lotto_numbers.pop(0))
 
         for board in boards:
             if has_bingo(board, drawn_numbers):
-                winning_board = board
-                break
-
-    return calculate_board_score(winning_board, drawn_numbers)
+                return calculate_board_score(board, drawn_numbers)
 
 
 def solve_part_2(filePath):
-    
+    input_data = read_lines(filePath)
+    lotto_numbers = get_lotto_numbers(input_data)
+
+    boards = get_lotto_boards(input_data)
+
+    # find last winning board
+    drawn_numbers: list[int] = []
+    while(len(lotto_numbers) > 0):
+        drawn_numbers.append(lotto_numbers.pop(0))
+
+        for board in list(boards):
+            if has_bingo(board, drawn_numbers):
+                if len(boards) == 1:
+                    return calculate_board_score(board, drawn_numbers)
+                boards.remove(board)
 
 
 def solve(part=1, example=False):
