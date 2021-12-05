@@ -1,4 +1,4 @@
-from utility.file import read_lines
+from src.utility.file import read_lines
 
 
 def binary_array_to_decimal(binary_array):

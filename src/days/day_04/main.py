@@ -1,4 +1,4 @@
-from utility.file import read_lines
+from src.utility.file import read_lines
 
 
 def get_sum_unmarked_numbers(board: list[list[int]], drawn_numbers: list[int]) -> int:

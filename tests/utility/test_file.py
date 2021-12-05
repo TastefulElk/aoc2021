@@ -1,6 +1,5 @@
 import unittest
-# not sure why the .. is needed here 🤔
-from .file import read_lines, read_lines_as_numbers
+from src.utility.file import read_lines, read_lines_as_numbers
 
 
 class TestUtility(unittest.TestCase):

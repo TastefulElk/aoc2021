@@ -1,4 +1,4 @@
-from utility.file import read_lines
+from src.utility.file import read_lines
 
 
 def solve_part_1(inputFile):

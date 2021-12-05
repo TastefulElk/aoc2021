@@ -1,5 +1,5 @@
 from typing import Tuple
-from utility.file import read_lines
+from src.utility.file import read_lines
 
 
 def parse_input(input) -> list[Tuple[list[int], list[int]]]:
