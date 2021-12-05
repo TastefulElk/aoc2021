@@ -18,7 +18,7 @@ def main():
         print("Part must be between 1 and 2")
         return
 
-    solution = importlib.import_module("days.{:02d}.main".format(args.day))
+    solution = importlib.import_module("days.day_{:02d}.main".format(args.day))
     answer = solution.solve(args.part, args.example)
     print("Answer: {}".format(answer))
 

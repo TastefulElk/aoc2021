@@ -1,4 +1,4 @@
-from utility.file import read_lines_as_numbers
+from src.utility.file import read_lines_as_numbers
 
 
 def count_increases(readings: list):
@@ -34,7 +34,7 @@ def solve_part_2(inputFile: str):
 
 def solve(part=1, example=False):
     fileName = "input.txt" if not example else "example.txt"
-    filePath = f"src/days/01/{fileName}"
+    filePath = f"src/days/day_01/{fileName}"
 
     if part == 1:
         return solve_part_1(filePath)

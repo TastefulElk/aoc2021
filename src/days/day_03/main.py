@@ -74,7 +74,7 @@ def solve_part_1(inputFile):
 
 def solve(part=1, example=False):
     fileName = "input.txt" if not example else "example.txt"
-    filePath = f"src/days/03/{fileName}"
+    filePath = f"src/days/day_03/{fileName}"
 
     if part == 1:
         return solve_part_1(filePath)
