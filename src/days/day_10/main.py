@@ -51,7 +51,6 @@ def solve_part_2(inputFile):
 
     scores = []
     for line in input_data:
-        print(f"checking line {line}")
         close_queue = []
         for char in line:
             if char in OPENING_CHARS:
